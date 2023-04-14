@@ -20,7 +20,7 @@ Flight.create(test, (e, data) => {
 })
 
 
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
     console.log(`server up`);
     mongoose.set('strictQuery', true)
     // connect to mongodDB
@@ -30,5 +30,6 @@ app.listen(PORT, () => {
       })
     mongoose.connection.once('open', () => {
         console.log('Connected to MongoDB!')
+        app.listen(PORT, () => console.log(`Server up`))
     })
-})
+// })
